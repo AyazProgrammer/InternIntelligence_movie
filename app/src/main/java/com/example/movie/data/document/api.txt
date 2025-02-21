@@ -1,0 +1,73 @@
+
+------------------------------- 1 ---------------------------------------------------------------------------------
+api_key: Your TMDb API key.
+language (optional): The language for the results (e.g., en-US).
+page (optional): The page number of the results (default is 1).
+
+https://api.themoviedb.org/3/movie/popular?api_key=150eda341214de29f8d54f22f4b555ae&language=en-US&page=1
+
+------------------------------2-------------------------------------------------------------------------------------
+movie detail
+
+https://api.themoviedb.org/3/movie/85?api_key=150eda341214de29f8d54f22f4b555ae&language=en-US
+-------------------------------3-------------------------------------------------------------------------------------
+Similar movies
+
+https://api.themoviedb.org/3/movie/550/similar?api_key=150eda341214de29f8d54f22f4b555ae&language=en-US&page=1
+"https://api.themoviedb.org/3/movie/{movieId}/similar?api_key=150eda341214de29f8d54f22f4b555ae&language=en-US&page=1"
+-------------------------------4---------------------------------------------------------------------------------------
+Movie videos
+
+https://api.themoviedb.org/3/movie/{movieId}/videos?api_key=150eda341214de29f8d54f22f4b555ae&language=en-US
+val videoUrl = "https://www.youtube.com/embed/$videoKey?autoplay=1&vq=hd1080"
+--------------------------------5-----------------------------------------------------------------------------------------------------
+movie actors and worker
+
+https://api.themoviedb.org/3/movie/505/credits?api_key=150eda341214de29f8d54f22f4b555ae&language=en-US&page=1
+---------------------------------6-------------------------------------------------------------------------------
+Movie User Reviews
+
+https://api.themoviedb.org/3/movie/550/reviews?api_key=150eda341214de29f8d54f22f4b555ae&language=en-US
+---------------------------------------------------------------------------------------------
+val youtubeUrl = "https://www.youtube.com/embed/$videoKey"
+
+
+------------------------------7------------------------------------
+https://api.themoviedb.org/3/discover/movie?api_key=YOUR_API_KEY&with_genres=GENRE_ID&primary_release_year=YEAR&vote_average.gte=MIN_RATING&vote_average.lte=MAX_RATING&language=en-US
+https://api.themoviedb.org/3/discover/movie?api_key=150eda341214de29f8d54f22f4b555ae&with_genres=28,35&primary_release_year=2020&vote_average.gte=7&vote_average.lte=9&language=en-US
+
+----------------------------8-------------------------------------------------
+https://api.themoviedb.org/3/discover/movie?api_key=150eda341214de29f8d54f22f4b555ae&language=en-US&page=1
+
+https://api.themoviedb.org/3/search/movie?api_key=YOUR_API_KEY&query=YOUR_QUERY
+https://api.themoviedb.org/3/search/movie?api_key=150eda341214de29f8d54f22f4b555ae&query=YOUR_QUERY
+
+https://api.themoviedb.org/3/discover/movie?api_key=150eda341214de29f8d54f22f4b555ae&language=en-US&vote_average.gte=7.5&with_genres=28,12&sort_by=popularity.desc&page=1
+
+
+https://api.themoviedb.org/3/person/popular?api_key=150eda341214de29f8d54f22f4b555ae&page=1
+
+https://api.themoviedb.org/3/search/person?api_key=150eda341214de29f8d54f22f4b555ae&query={search_query}&page=1
+https://api.themoviedb.org/3/search/person?api_key=150eda341214de29f8d54f22f4b555ae&query=rrr}&page=1
+
+https://api.themoviedb.org/3/search/person?api_key=150eda341214de29f8d54f22f4b555ae&query=Robert%20Downey%20Jr.&page=1
+https://api.themoviedb.org/3/person/6193?api_key=150eda341214de29f8d54f22f4b555ae&append_to_response=movie_credits
+movie detail
+https://api.themoviedb.org/3/person/63?api_key=150eda341214de29f8d54f22f4b555ae&append_to_response=movie_credits
+
+
+https://api.themoviedb.org/3/person/63?api_key=150eda341214de29f8d54f22f4b555ae&append_to_response=movie_credits
+
+
+// after make local database
+ override suspend fun getPopularMovies(page: Int): MovieResult {
+        return try {
+            remoteDataSource.getPopularMovies(page).takeIf { it.isNotEmpty() }?.let {
+                localDataSource.saveEntities(it.map { it.toEntity() })
+            }
+            Log.e("local data source", "${localDataSource.getEntities().map { it.toEntityToDomain() }}")
+            localDataSource.getEntities().map { it.toEntityToDomain() }
+        } catch (e: Exception) {
+            localDataSource.getEntities().map { it.toEntityToDomain() }
+        }
+    }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="setBackColor">#FF0000</color>
+    <color name="defaultBackColor">#212875</color>
+    <color name="backColor">#0C114D</color>
+    <color name="mainColor">#0e1454</color>
+    <color name="Orange">#FF7622</color>
+    <color name="Remember_me">#7E8A97</color>
+
+
+
+</resources>

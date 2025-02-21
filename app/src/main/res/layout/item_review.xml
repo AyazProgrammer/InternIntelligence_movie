@@ -1,0 +1,68 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/defaultBackColor"
+    android:padding="8dp"
+    android:gravity="center">
+
+    <!-- Star and Rating Section -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="4dp">
+
+
+
+        <!-- Author Name -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_person" />
+
+        <TextView
+            android:id="@+id/author_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="by Author Name"
+            android:textSize="12sp"
+            android:textColor="@android:color/holo_red_light"
+            android:layout_marginEnd="8dp"
+            android:gravity="center" />
+
+        <!-- Star Icon -->
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/star_icon"
+            android:layout_marginEnd="4dp"
+            app:tint="#FFD700" />
+
+        <!-- Review Point -->
+        <TextView
+            android:id="@+id/review_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9.5"
+            android:textSize="12sp"
+            android:textColor="@android:color/holo_orange_light"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- Content -->
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="by Author Content"
+        android:textSize="12sp"
+        android:textColor="#CCCCCC"
+        android:layout_marginTop="8dp"
+        android:gravity="center" />
+</LinearLayout>

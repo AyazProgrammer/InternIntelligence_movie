@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/defaultBackColor"
+    android:gravity="center"
+    android:layout_marginBottom="8dp">
+
+    <!-- Profile Image -->
+    <ImageView
+        android:id="@+id/iv_profile_image"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_person"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Actor's Name -->
+    <TextView
+        android:id="@+id/tv_actor_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Actor Name"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:gravity="center" />
+
+    <!-- Character or Role -->
+    <TextView
+        android:id="@+id/characterOrName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Role Name"
+        android:textColor="#B3FFFFFF"
+        android:textSize="10sp"
+        android:gravity="center"
+        android:layout_marginTop="4dp" />
+
+</LinearLayout>

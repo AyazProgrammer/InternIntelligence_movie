@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <solid android:color="#212875"/>
+            <corners android:radius="8dp"/>
+        </shape>
+    </item>
+
+    <item android:id="@android:id/icon">
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <path
+                android:fillColor="#FFFFFF"
+                android:pathData="M18,12L6,20V14H0V10H6V4L18,12Z"/>
+        </shape>
+    </item>
+</layer-list>

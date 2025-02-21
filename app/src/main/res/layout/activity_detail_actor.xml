@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".presentation.view.activity.DetailActivity">
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainColor"
+    android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/mainColor"
+        app:titleTextColor="@color/white"
+        app:navigationIcon="@drawable/ic_back"
+        app:title="Actor Profile"
+        android:padding="10dp"/>
+
+    <ImageView
+        android:id="@+id/ivActorProfile"
+        android:layout_width="120dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/tvActorName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"/>
+
+    <!-- Doğum Tarixi və Yer -->
+    <TextView
+        android:id="@+id/tvBirthInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#B0BEC5"
+        android:textSize="14sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Biography -->
+    <TextView
+        android:id="@+id/tvBiography"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="30dp"
+        android:paddingLeft="30dp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:maxLines="5"
+        android:ellipsize="end"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/readMoreDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Read More"
+        android:textColor="#FF0000"
+        android:layout_gravity="center"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="14dp"
+        />
+
+    <!-- TabLayout -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3949AB"
+        android:backgroundTint="@color/mainColor"
+        app:tabIndicatorColor="#FF0000"
+        app:tabSelectedTextColor="#FF0000"
+        app:tabTextColor="#FFFFFF" />
+
+    <!-- ViewPager -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:clipToPadding="false"
+        android:layout_weight="1"/>
+
+</LinearLayout>
+</androidx.core.widget.NestedScrollView>
